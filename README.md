@@ -1,5 +1,5 @@
-# Football_ScoresAPI key goes into strings.xml
+# Football_Scores
 
-The ONLY way to get it bar code scanner to run on a Samsung device was to enable the flash by default, hence it turns on automatically.
+API key goes into strings.xml
 
-Credit to google API examples for scanner code and of course many a various stackoverflow contributors.
+Credit to the  many and various stackoverflow contributors.
