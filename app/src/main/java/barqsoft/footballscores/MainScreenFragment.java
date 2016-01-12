@@ -76,23 +76,14 @@ public class MainScreenFragment extends Fragment implements LoaderManager.Loader
     @Override
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor)
     {
-        //Log.v(FetchScoreTask.LOG_TAG,"loader finished");
-        //cursor.moveToFirst();
-        /*
-        while (!cursor.isAfterLast())
-        {
-            Log.v(FetchScoreTask.LOG_TAG,cursor.getString(1));
-            cursor.moveToNext();
-        }
-        */
 
         int i = 0;
         cursor.moveToFirst();
-        while (!cursor.isAfterLast())
+     /**   while (!cursor.isAfterLast())
         {
             i++;
             cursor.moveToNext();
-        }
+        }**/
         //Log.v(FetchScoreTask.LOG_TAG,"Loader query: " + String.valueOf(i));
         mAdapter.swapCursor(cursor);
         //mAdapter.notifyDataSetChanged();
@@ -122,7 +113,7 @@ public class MainScreenFragment extends Fragment implements LoaderManager.Loader
         if ( mAdapter.isEmpty() ) {
             TextView tv = (TextView) getView().findViewById(R.id.list_empty);
             if ( null != tv ) {
-                // if cursor is empty, why? do we have an invalid location
+                // if
                 int message = R.string.empty_score_list;
                 @myFetchService.ServerStatus int location = Utilies.getLocationStatus(getActivity());
                 switch (location) {
@@ -147,9 +138,11 @@ public class MainScreenFragment extends Fragment implements LoaderManager.Loader
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        if (key.equals(getString(R.string.pref_server_status_key))) {
-            updateEmptyView();
-        }
+        try {
+            if (key.equals(getString(R.string.pref_server_status_key))) {
+                updateEmptyView();
+            }
+        }catch (Exception e){}
     }
 
 

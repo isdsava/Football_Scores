@@ -104,7 +104,7 @@ public class TodaysScoresWidgetIntentService extends IntentService {
                     layOutIdWidge = R.layout.widget_today_scores_med;
                 }
 
-                layOutIdWidge = R.layout.widget_today_scores;
+
 
                 RemoteViews remoteViews = new RemoteViews(getApplicationContext().getPackageName(),layOutIdWidge);
                 remoteViews.setImageViewResource(R.id.widget_icon, R.drawable.ic_launcher);
